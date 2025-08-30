@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* arka plan: login ile aynı değişkenleri kullan */
+.app-shell {
+  min-height: 10vh;
+  display: flex;
+  background: linear-gradient(135deg, var(--bg-grad-start), var(--bg-grad-end));
+}
+
+/* içerik alanı */
+.app-content {
+  flex: 1;
+  padding: clamp(10px, 3vw, 36px);
+  color: #0f172a;
+}
+
+:root {
+  --sb-width: 220px;
+}
+
+/* SOL ŞERİT – sadece bu kadar! */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0; /* sağ kenarı SERBEST bırak */
+  width: var(--sb-width);
+  background: linear-gradient(120deg, #f4f6f8, #ccc2f19a, #b1b4f8);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 10px;
+  box-shadow: 8px 0 28px rgba(15, 23, 42, 0.18);
+}
+
+/* içerikle araya dikey çizgi */
+.sidebar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(15, 23, 42, 0.1);
+}
+
+/* küçük logo */
+.sb-logo {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0 10px;
+}
+.sb-logo img {
+  height: 2px;
+  width: 1px;
+}
+
+/* menü listesi */
+.sb-nav {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ikon solda, yazı sağda – küçük */
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #0f1a2a;
+  text-decoration: none;
+}
+.sb-item:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.sb-item.active {
+  background: #e8e5ff;
+  color: #6d5ae6;
+}
+
+.sb-icon {
+  flex: 0 0 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  color: #4b5563;
+}
+.sb-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: currentColor;
+}
+
+.sb-label {
+  font-weight: 600;
+}

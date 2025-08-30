@@ -1,0 +1,93 @@
+:root {
+  --sb-width: 220px; /* sol şerit genişliği */
+}
+
+/* temel */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: linear-gradient(135deg, #1b8af1de, #b58ded);
+  color: #0f172a;
+}
+
+/* içerik alanı: soldan sidebar kadar boşluk bırak */
+.app-shell {
+  min-height: 100vh;
+}
+.app-main {
+  margin-left: var(--sb-width); /* CRITICAL: sidebar kaplamasın */
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* ÖNEMLİ: globalde svg’yi esnetme */
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* İçerik kapsayıcı (sidebar boşluğu zaten .app-main veriyor) */
+.app-container {
+  max-width: 720px;
+  padding: 24px;
+}
+
+.page-title {
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: #09318d6b;
+  border-bottom: 4px solid var(--sb-border, #c0d5f8);
+  padding: 12px 0;
+  text-align: center;
+  color: #09318d85;
+}
+/* Kart form */
+.form-card {
+  background: #ffffffb4;
+  color: #11285e;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+/* Alan ve inputlar */
+.field label {
+  display: block;
+  margin: 0 0 6px;
+  color: #334155;
+  font-weight: 600;
+}
+.input {
+  width: 100%;
+  border: 1px solid #93a4e7c5;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 16px;
+  outline: none;
+}
+.input:focus {
+  border-color: #6d5ae6;
+  box-shadow: 0 0 0 4px rgba(109, 90, 230, 0.2);
+}
+
+/* Buton */
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  cursor: pointer;
+}
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(320deg, #b1b4f8, #7c49f3);
+}
