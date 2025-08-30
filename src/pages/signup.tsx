@@ -51,6 +51,62 @@ export default function SignUp() {
       </div>
 
       <form className="login-form" onSubmit={registerUser} noValidate>
+        <div className="field">
+          <label htmlFor="name">Full Name</label>
+          <input
+            id="name"
+            className="input"
+            type="text"
+            value={form.name}
+            onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+            required
+          />
+        </div>
+
+        <div className="field">
+          <label htmlFor="email">E-Posta</label>
+          <input
+            id="email"
+            className="input"
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+            placeholder="ornek@mail.com"
+            autoComplete="email"
+            required
+          />
+        </div>
+
+        <div className="field">
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            className="input pw-input"
+            type="password"
+            value={form.password}
+            onChange={(e) =>
+              setForm((p) => ({ ...p, password: e.target.value }))
+            }
+            placeholder="••••••"
+            autoComplete="new-password"
+            required
+            minLength={6}
+          />
+        </div>
+
+        <div className="field">
+          <label htmlFor="birthdate">Birth Date</label>
+          <input
+            id="birthdate"
+            className="input"
+            type="date"
+            value={form.birthdate}
+            onChange={(e) =>
+              setForm((p) => ({ ...p, birthdate: e.target.value }))
+            }
+            required
+          />
+        </div>
         {error && <div className="error">{error}</div>}
 
         <button className="btn-primary" type="submit" disabled={!canSubmit}>

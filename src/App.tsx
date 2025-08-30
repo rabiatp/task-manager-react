@@ -12,6 +12,10 @@ import AuthedLayout from "./layouts/AuthedLayout";
 import "./index.css";
 import { useAuth } from "./context/AuthContext";
 import RegisterChild from "./pages/registerChild";
+import ChildrenList from "./pages/childrenList";
+import EditChild from "./pages/editChild";
+import TasksList from "./pages/taskList";
+import NewTask from "./pages/newTask";
 
 function RequireAuth() {
   const { token, loading } = useAuth();
@@ -32,6 +36,10 @@ export default function App() {
           <Route element={<AuthedLayout />}>
             <Route path="/home" element={<Home />} />
             <Route path="/registerChild" element={<RegisterChild />} />
+            <Route path="/children" element={<ChildrenList />} />
+            <Route path="/children/:id/edit" element={<EditChild />} />
+            <Route path="/tasks" element={<TasksList />} />
+            <Route path="/tasks/new" element={<NewTask />} />
             {/* istersen root'u home'a yönlendir */}
             <Route path="/" element={<Navigate to="/home" replace />} />
           </Route>

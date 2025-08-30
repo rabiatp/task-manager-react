@@ -2,6 +2,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./sidebar.css";
 import type { JSX } from "react";
 import Logo from "../logo.png";
+import { HiUsers } from "react-icons/hi2";
+import { FaUserPlus } from "react-icons/fa6";
 
 // Basit SVG ikonları (paket kurmadan çalışır)
 function IconHome() {
@@ -25,14 +27,7 @@ function IconTasks() {
   );
 }
 function IconUsers() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden>
-      <path
-        d="M16 14c2.7 0 8 1.35 8 4v2H8v-2c0-2.65 5.3-4 8-4zm0-2a4 4 0 1 0-0.001-8.001A4 4 0 0 0 16 12zM6 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2.5 2c-2.21 0-6.5 1.1-6.5 3.25V20h6"
-        fill="currentColor"
-      />
-    </svg>
-  );
+  return <FaUserPlus />;
 }
 function IconSettings() {
   return (
@@ -44,12 +39,16 @@ function IconSettings() {
     </svg>
   );
 }
+function IconView() {
+  return <HiUsers />;
+}
 
-type NavItem = { to: string; label: string; icon: JSX.element; end?: boolean };
+type NavItem = { to: string; label: string; icon: JSX.Element; end?: boolean };
 const NAV: NavItem[] = [
   { to: "/", label: "Dashboard", icon: <IconHome />, end: true },
   { to: "/tasks", label: "Tasks", icon: <IconTasks /> },
   { to: "/registerChild", label: "Add Child", icon: <IconUsers /> },
+  { to: "/children", label: "Children", icon: <IconView /> },
   { to: "/settings", label: "Ayarlar", icon: <IconSettings /> },
 ];
 

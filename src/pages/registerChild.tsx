@@ -3,6 +3,7 @@ import { initialSignUpForm, type SignUpForm } from "../models/auth";
 import { useAppDispatch } from "../app/hook";
 import { signup } from "../services/auth";
 import { useAuth } from "../context/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function calcAge(isoDate: string) {
   if (!isoDate) return 0;
@@ -19,6 +20,7 @@ export default function RegisterChild() {
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const registerChild = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,13 +47,13 @@ export default function RegisterChild() {
     const payload: SignUpForm = {
       ...form,
       role,
-      parentId: user.id, // <-- KRİTİK NOKTA
+      parentId: user.id,
     };
-    debugger;
     setSubmitting(true);
     try {
       await signup(payload);
       setForm(initialSignUpForm);
+      navigate("/children");
     } catch (err) {
       setError("Something went wrong while saving. Please try again.");
     } finally {
