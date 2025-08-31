@@ -58,7 +58,7 @@ const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {
-        // sayfa yenilenince user'ı dışarıdan hydrate etmek istersen
+
         setUser(state, action: PayloadAction<User | null>) {
             state.user = action.payload;
         },

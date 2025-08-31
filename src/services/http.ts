@@ -5,6 +5,7 @@ export const http = axios.create({
     withCredentials: false,
 });
 
+//tokenı headera sakla
 http.interceptors.request.use((config) => {
     const token = localStorage.getItem("token");
     if (token) {

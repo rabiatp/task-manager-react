@@ -33,7 +33,7 @@ export default function TasksList() {
         setItems(Array.isArray(data) ? data : []);
       } catch (e: any) {
         const status = e?.response?.status;
-        // Bazı backendler boşken 404/204 döndürebiliyor → boş liste kabul et
+
         if (status === 404 || status === 204) {
           setItems([]);
           setErr(null);
