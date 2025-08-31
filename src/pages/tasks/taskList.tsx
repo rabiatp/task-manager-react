@@ -5,7 +5,7 @@ import {
   listTasks,
   toggleStatus,
   type Task,
-} from "../services/tasks";
+} from "../../services/tasks";
 
 function StatusBadge({ s }: { s: Task["status"] }) {
   const map = {

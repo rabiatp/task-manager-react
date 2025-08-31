@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import type { CreateTaskInput, Priority, Task } from "../services/tasks";
-import { listSprints, type Sprint } from "../services/sprints";
-import { listUsers, type UserRef } from "../services/users";
+import type { CreateTaskInput, Priority, Task } from "../../services/tasks";
+import { listSprints, type Sprint } from "../../services/sprints";
+import { listUsers, type UserRef } from "../../services/users";
 
 type Props = {
   initial?: Partial<Task>;
